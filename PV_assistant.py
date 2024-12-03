@@ -139,7 +139,7 @@ def generar_diagrama(num_inversores, carriles_por_inversor, paneles_por_carril):
                 last_panel_node = panel_node
 
                 #Añadir ícono del panel
-                ab_panel = AnnotationBbox(OffsetImage(mpimg.imread('panel.png'), zoom=0.25), pos[panel_node], frameon=False)
+                ab_panel = AnnotationBbox(OffsetImage(mpimg.imread('images/panel.png'), zoom=0.25), pos[panel_node], frameon=False)
                 ax.add_artist(ab_panel)
 
             #Conectar todos los paneles de un mismo carril
