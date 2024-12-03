@@ -208,7 +208,7 @@ def app():
                         if len(coords) >= 3:
                             #Calcular el área
                             area_m2 = calculate_area(coords)
-                            st.success(f"Área: {area_m2:.2f} metros cuadrados.")
+                            st.success(f"Área: {area_m2:.2f} m².")
                         else:
                             st.warning("El polígono debe tener al menos 3 puntos.")
                     else:
@@ -361,7 +361,7 @@ def app():
         pane_total = pan_inv * cant_inversores
         c12.metric("Cantidad de paneles total", round(pane_total,1))
         area_real = pane_total * panel_data['Area']
-        c13.metric("Área de Captación real ($m^2$)", round(area_real,2))
+        c13.metric("Área de Captación real (m²)", round(area_real,2))
         pot_SFV = pane_total * panel_data['Pmax']/1000
         c14.metric("Potencia SFV (kW)", round(pot_SFV,1))
         energy_tot = pot_SFV * HorasPico * 30
