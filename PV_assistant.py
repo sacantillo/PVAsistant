@@ -110,7 +110,7 @@ def generar_diagrama(num_inversores, carriles_por_inversor, paneles_por_carril):
         pos[inv_node] = (x_offset, y_inversor_centro)  #Colocamos el inversor en el centro
 
         #Añadir ícono del inversor
-        ab_inversor = AnnotationBbox(OffsetImage(mpimg.imread('inversor.png'), zoom=0.4), pos[inv_node], frameon=False)
+        ab_inversor = AnnotationBbox(OffsetImage(mpimg.imread('images/inversor.png'), zoom=0.4), pos[inv_node], frameon=False)
         ax.add_artist(ab_inversor)
 
         #Añadir carriles y paneles
