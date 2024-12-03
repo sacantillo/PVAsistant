@@ -263,7 +263,7 @@ def app():
         paneles_f1 = round(1000*pot_pico/panel_data['Pmax'],1)
         cx.metric("Paneles a instalar", paneles_f1)
         gen_mensual = round(panel_data['Pmax']*HorasPico*paneles_f1*30/1e6,1)
-        cy.metric("Generación (MWh-mes)",gen_mensual, str(round(-0.112378*gen_mensual,2))+"Ton CO2/MWh",delta_color="inverse")
+        cy.metric("Generación (MWh-mes)",gen_mensual, str(round(-0.112378*gen_mensual,2))+" Ton CO2/MWh",delta_color="inverse")
         st.markdown('<h5 style="font-size: 14px;">Área disponible (m<sup style=font-size:.8em;>2 </sup>) :</h5>', unsafe_allow_html=True)
 
         cc, cd = st.columns([3, 1])
