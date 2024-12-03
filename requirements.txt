@@ -1,0 +1,15 @@
+numpy
+pandas
+plotly
+streamlit
+scipy
+folium
+streamlit_folium
+datetime
+geopy
+pynasapower
+googlemaps
+pyproj
+shapely
+networkx
+matplotlib
