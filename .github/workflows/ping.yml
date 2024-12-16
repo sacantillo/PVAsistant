@@ -2,7 +2,7 @@ name: Keep Streamlit App Awake
 
 on:
   schedule:
-    - cron: "*/20 * * * *"  # Ejecuta cada 20 minutos
+    - cron: "*/5 * * * *"  # Ejecuta cada 20 minutos
 
 jobs:
   ping:
