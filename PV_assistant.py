@@ -222,6 +222,7 @@ def app():
             st.metric("Horas Solares Pico (HSP)",HorasPico)
             #st.metric("HSP (min):", round(min,1))
 
+    st.sidebar.image("images/cotel-logotipo.png",caption="",use_column_width=True)
     consumo = st.sidebar.number_input("Consumo (kWh-mes)",key='consumo_input', min_value=0, step=1)
     tarifa = st.sidebar.number_input("Tarifa ($COP/kWh)",key='precio_input', min_value=0.00,step=0.01)
 
