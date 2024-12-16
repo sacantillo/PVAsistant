@@ -180,6 +180,7 @@ def app():
             address = st.text_input("Dirección:",label_visibility="collapsed")
         with cb:
             buscar = st.button("Buscar", use_container_width=True)
+        alerta = st.placeholder.empty()
 
     if buscar:
         if address.strip():
@@ -187,7 +188,7 @@ def app():
             st.session_state.lat, st.session_state.lon = lat, lon
             setup_map(lat, lon, address)
         else:
-            st.warning("El campo no puede estar vacío. Por favor escribe una ubicación")
+            alerta.warning("El campo no puede estar vacío. Por favor escribe una ubicación")
 
     _, HorasPico,_ = HSP(st.session_state.lat,st.session_state.lon)
     HorasPico = round(HorasPico,1)
