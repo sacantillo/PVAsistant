@@ -182,9 +182,12 @@ def app():
             buscar = st.button("Buscar", use_container_width=True)
 
     if buscar:
-        lat, lon = geocode_address(address)
-        st.session_state.lat, st.session_state.lon = lat, lon
-        setup_map(lat, lon, address)
+        if address.strip():
+            lat, lon = geocode_address(address)
+            st.session_state.lat, st.session_state.lon = lat, lon
+            setup_map(lat, lon, address)
+        else:
+            st.warning("El campo no puede estar vacío. Por favor escribe una ubicación")
 
     _, HorasPico,_ = HSP(st.session_state.lat,st.session_state.lon)
     HorasPico = round(HorasPico,1)
