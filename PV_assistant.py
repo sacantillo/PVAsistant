@@ -222,6 +222,24 @@ def app():
             st.metric("Horas Solares Pico (HSP)",HorasPico)
             #st.metric("HSP (min):", round(min,1))
 
+    st.sidebar.markdown(
+    """
+    <style>
+        [data-testid="stSidebar"] > div:first-child {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        
+        [data-testid="stSidebar"] img {
+            margin-top: -30px;  /* Ajustar según el espacio requerido */
+            margin-left: 0px;
+        }
+    </style>
+    """, unsafe_allow_html=True
+    )
+
     st.sidebar.image("images/cotel-logotipo.png",caption="",use_column_width=True)
     consumo = st.sidebar.number_input("Consumo (kWh-mes)",key='consumo_input', min_value=0, step=1)
     tarifa = st.sidebar.number_input("Tarifa ($COP/kWh)",key='precio_input', min_value=0.00,step=0.01)
