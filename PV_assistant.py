@@ -233,7 +233,7 @@ def app():
         }
         
         [data-testid="stSidebar"] img {
-            margin-top: -50px;  /* Ajustar según el espacio requerido */
+            margin-top: -80px;  /* Ajustar según el espacio requerido */
             margin-left: 0px;
         }
     </style>
