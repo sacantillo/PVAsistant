@@ -180,7 +180,7 @@ def app():
             address = st.text_input("Dirección:",label_visibility="collapsed")
         with cb:
             buscar = st.button("Buscar", use_container_width=True)
-        alerta = st.placeholder.empty()
+        alerta = st.empty()
 
     if buscar:
         if address.strip():
