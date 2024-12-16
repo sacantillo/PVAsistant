@@ -169,7 +169,18 @@ def generar_diagrama(num_inversores, carriles_por_inversor, paneles_por_carril):
 
 
 def app():
+    font = """
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gilroy:wght@400;700&display=swap');
+
+        body, h1, h2, h3, h4, h5, h6, p, .stDataFrame, .css-1y0t9o9, .stButton>button, .css-1wa3eu0, .css-10jvk68, .css-1y0t9o9 {
+            font-family: 'Prompt', sans-serif !important;
+        }
+
+    </style>
+    """
     st.set_page_config(page_title="PV Consulter", layout="wide")
+    st.markdown(font, unsafe_allow_html=True)
     st.title("Información Instalación SSFV")
     inicializar()
 
