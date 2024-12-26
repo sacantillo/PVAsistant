@@ -1,14 +1,28 @@
-name: Keep Streamlit App Awake
-
+name: Keep Streamlit App Alive
 on:
   schedule:
-    - cron: "*/5 * * * *"  # Ejecuta cada 20 minutos
+    # Ejecutar cada 12 horas
+    - cron: '0 */12 * * *'
+  workflow_dispatch:  # Permite ejecutar manualmente también
 
 jobs:
-  ping:
+  keep-alive:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Send Ping to Streamlit App
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Create empty commit
         run: |
-          curl -X GET https://pv-assistant.streamlit.app/
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          
+          # Crear archivo temporal con timestamp
+          echo "Keep alive $(date)" > tmp_file.txt
+          
+          # Commit y push
+          git add tmp_file.txt
+          git commit -m "keep alive $(date)"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
